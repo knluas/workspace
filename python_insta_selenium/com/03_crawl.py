@@ -15,12 +15,14 @@ html = urllib.request.urlopen(url)
 pageString = driver.page_source
 driver_obj = bs4.BeautifulSoup(pageString,"html.parser")
 
-driver_obj1 = driver_obj.find("div",{"class":"C4VMK"})
-driver_text = driver_obj1.find_all("a",{"class":""})
-driver_date = driver_obj1.find("time",{"class":"FH9sR Nzb55"})
+#driver_obj1 = driver_obj.find("div",{"class":"C4VMK"})
+#driver_date = driver_obj1.find("time",{"class":"FH9sR Nzb55"})
+driver_text = driver_obj.find("div",{"class":"C4VMK"}).find_all("a",{"class":""})
+driver_date = driver_obj.find("div",{"class":"k_Q0X NnvRN"}).find("time",{"class":"_1o9PC Nzb55"})
+
 for i in driver_text:
     print(i.text)
-print(datetime.datetime.strptime(driver_date.get("datetime")[0:9], '%Y-%m-%d'))
+print(datetime.datetime.strptime(driver_date.get("datetime")[0:10], '%Y-%m-%d'))
 #bs_obj = bs4.BeautifulSoup(html,"html.parser")
 #driver.find_element_by_xpath("//div[@class='v1Nh3 kIKUG  _bz0w']").click()
 sleep(1)
