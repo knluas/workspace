@@ -43,7 +43,7 @@ for cnt in range(len(driver.find_elements_by_xpath("//div[@class='v1Nh3 kIKUG  _
         #word.append(i.text)   #최종 해쉬태그 리스트로 append
         #date.append(wmcymd)
         if(i != ""):
-            result.append([i.text,wmcymd])
+            result.append([i.text.strip(' '),wmcymd])
     #result.append(temp) #2단 배열을 만들기위함
     #print(result)
     ########################

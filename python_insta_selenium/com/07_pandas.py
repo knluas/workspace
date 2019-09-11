@@ -3,7 +3,6 @@ import seaborn as sns
 import numpy as np
 
 #df = 표
-
 df = pd.read_csv("해쉬태그.csv", encoding='utf-8')
 #print(df.count())
 #dfFiltered = df[df['0'] == '#예술강사']
